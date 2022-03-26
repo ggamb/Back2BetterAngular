@@ -10,6 +10,7 @@ import { OrangeLineComponent } from './orange-line/orange-line.component';
 import { BlueLineComponent } from './blue-line/blue-line.component';
 import { YellowLineComponent } from './yellow-line/yellow-line.component';
 import { GreenLineComponent } from './green-line/green-line.component';
+import { StationFilterPipe } from './station-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { GreenLineComponent } from './green-line/green-line.component';
     OrangeLineComponent,
     BlueLineComponent,
     YellowLineComponent,
-    GreenLineComponent
+    GreenLineComponent,
+    StationFilterPipe
   ],
   imports: [
     BrowserModule,

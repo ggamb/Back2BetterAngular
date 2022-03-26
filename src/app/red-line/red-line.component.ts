@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Station } from '../../station';
+import {STATIONS} from '../../stations-list'
+
 
 @Component({
   selector: 'app-red-line',
@@ -6,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./red-line.component.css']
 })
 export class RedLineComponent implements OnInit {
+
+  redLineStations: Station[] = STATIONS;
+
+  filterArgs = {line: 'red'}
 
   constructor() { }
 
