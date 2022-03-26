@@ -1,2 +1,7 @@
-<p>green-line works!</p>
-<div class = "vertical"></div>
+<div class = "vertical">
+    <ul>
+        <li *ngFor="let stations of greenLineStations | stationFilter: filterArgs">
+            <p>{{stations.name}}</p>
+        </li>
+    </ul>
+</div>

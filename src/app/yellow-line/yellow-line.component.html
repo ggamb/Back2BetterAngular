@@ -1,6 +1,7 @@
-<p>yellow-line works!</p>
 <div class = "vertical">
-   
-
-
+    <ul>
+        <li *ngFor="let stations of yellowLineStations | stationFilter: filterArgs">
+            <p>{{stations.name}}</p>
+        </li>
+    </ul>
 </div>
