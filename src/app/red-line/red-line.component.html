@@ -1,7 +1,12 @@
 <div class = "vertical">
     <ul>
-        <li *ngFor="let stations of redLineStations | stationFilter: filterArgs">
-            <p>{{stations.name}}</p>
+        <li *ngFor="let station of redLineStations | stationFilter: filterArgs" class="station-name">
+            <p>{{station.name}}</p>
+            <div *ngIf="station.transferLines.includes('green')">🟢</div>
+            <div *ngIf="station.transferLines.includes('yellow')">🟡</div>
+            <div *ngIf="station.transferLines.includes('orange')">🟠</div>
+            <div *ngIf="station.transferLines.includes('silver')">⚪</div>
+            <div *ngIf="station.transferLines.includes('blue')">🔵</div>
         </li>
     </ul>
 </div>
