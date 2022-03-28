@@ -17,6 +17,11 @@ export class RedLineComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.getRedLineTrains();
+  }
+
+  getRedLineTrains() {
+    console.log('this works');
   }
 
 }
