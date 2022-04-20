@@ -11,6 +11,8 @@ import { YellowLineComponent } from './yellow-line/yellow-line.component';
 import { GreenLineComponent } from './green-line/green-line.component';
 import { StationFilterPipe } from './station-filter.pipe';
 import { StationTransferPipe } from './station-transfer.pipe';
+import { HttpClientModule } from  '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { StationTransferPipe } from './station-transfer.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

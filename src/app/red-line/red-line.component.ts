@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Station } from '../../station';
-import {STATIONS} from '../../stations-list'
+import { STATIONS } from '../../stations-list';
+import { TrainLocationService } from '../train-location.service';
+
 
 
 @Component({
@@ -12,16 +14,18 @@ export class RedLineComponent implements OnInit {
 
   redLineStations: Station[] = STATIONS;
 
-  filterArgs = {line: 'red'}
+  filterArgs = { line: 'red' }
 
-  constructor() { }
+  posts: any;
+
+  constructor(private trainService: TrainLocationService) { }
 
   ngOnInit(): void {
-    this.getRedLineTrains();
+    this.trainService.getRedLineTrains().subscribe(
+      response => { console.log(response) },
+      (error) => { console.log(error); });
   }
 
-  getRedLineTrains() {
-    console.log('this works');
-  }
+
 
 }
