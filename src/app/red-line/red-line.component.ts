@@ -16,13 +16,16 @@ export class RedLineComponent implements OnInit {
 
   filterArgs = { line: 'red' }
 
-  posts: any;
+  trains: any;
 
   constructor(private trainService: TrainLocationService) { }
 
   ngOnInit(): void {
     this.trainService.getRedLineTrains().subscribe(
-      response => { console.log(response) },
+      response => {
+        console.log(response)
+
+      },
       (error) => { console.log(error); });
   }
 

@@ -6,9 +6,11 @@ import { OrangeLineComponent } from './orange-line/orange-line.component';
 import { RedLineComponent } from './red-line/red-line.component'
 import { SilverLineComponent } from './silver-line/silver-line.component';
 import { YellowLineComponent } from './yellow-line/yellow-line.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/red', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'red', component: RedLineComponent },
   { path: 'yellow', component: YellowLineComponent },
   { path: 'green', component: GreenLineComponent },

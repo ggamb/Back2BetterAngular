@@ -12,6 +12,7 @@ import { GreenLineComponent } from './green-line/green-line.component';
 import { StationFilterPipe } from './station-filter.pipe';
 import { StationTransferPipe } from './station-transfer.pipe';
 import { HttpClientModule } from  '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HttpClientModule } from  '@angular/common/http';
     YellowLineComponent,
     GreenLineComponent,
     StationFilterPipe,
-    StationTransferPipe
+    StationTransferPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

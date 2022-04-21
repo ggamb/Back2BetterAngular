@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class TrainLocationService {
 
@@ -14,7 +15,9 @@ export class TrainLocationService {
 
   private apiKey = environment.apiKey;
 
-  private metroHeroURL = `https://dcmetrohero.com/api/v1/metrorail/metrics`;
+  private metroHeroMetrics = `https://dcmetrohero.com/api/v1/metrorail/metrics`;
+
+  private metroHeroRed = `https://dcmetrohero.com/api/v1/metrorail/metrics`;
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -26,8 +29,12 @@ export class TrainLocationService {
 
   };
 
-  getRedLineTrains() {
+  getGeneralInfo() : Observable<any> {
+    return this.http.get(this.metroHeroMetrics, {headers: this.httpOptions.headers});
+  }
+
+  getRedLineTrains()  : Observable<any> {
+    return this.http.get(this.metroHeroRed, {headers: this.httpOptions.headers});
     
-    return this.http.get(this.metroHeroURL, {headers: this.httpOptions.headers});
   }
 }
